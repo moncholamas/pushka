@@ -1,5 +1,8 @@
 import {RequestHandler} from 'express';
-import  Notas  from '../models/notas'
+import  Notas  from '../models/notas';
+import loggerMain from '../helpers/logger';
+
+const logger = loggerMain('notasController');
 
 export const getNotas: RequestHandler =  async (req, res)=>{
     try {
@@ -10,6 +13,7 @@ export const getNotas: RequestHandler =  async (req, res)=>{
         data: notas
     });
     } catch (error) {
+        logger.error(error);
         return res.status(400).json({
             msg: "error al buscar notas"
         });
@@ -25,6 +29,7 @@ export const  getNotaById: RequestHandler = async (req,res) =>{
         data: nota
     });
     } catch (error) {
+        logger.error(error);
         return res.status(400).json({
             msg: "error al buscar la nota"
         });
@@ -40,6 +45,7 @@ export const nuevaNota: RequestHandler = async (req,res) =>{
             data: notaCargada
         });
     } catch (error) {
+        logger.error(error);
         return res.status(300).json({
             msg: "error al cargar la nota"
         })
@@ -56,6 +62,7 @@ export const updateNota: RequestHandler = async (req,res) =>{
             data: notaCargada
         });
     } catch (error) {
+        logger.error(error);
         return res.status(300).json({
             msg: "error al cargar la nota"
         })
@@ -73,6 +80,7 @@ export const deleteNota: RequestHandler = async (req,res)=>{
             msg: deleted
         });
     } catch (error) {
+        logger.error(error);
         return res.status(300).json({
             msg: "error al borrar la Nota"
         });
