@@ -1,10 +1,10 @@
-import {Document, Schema} from 'mongoose';
+import {Document, model, Schema} from 'mongoose';
 
 interface INOtas extends Document{
     name: string,
     date: Date,
     to: string,
-    rtte: {
+    /*rtte: {
         name: string,
         street: string,
         nationality: string,
@@ -18,13 +18,14 @@ interface INOtas extends Document{
     //Info DB
     createdAt: Date;
     modifiedAt: Date;
+    */
 }
 
 const NotasSchema: Schema = new Schema({
     name: {type: String, required:true},
     date: Date,
     to: String,
-    rtte: {
+    /*rtte: {
         name: String,
         street: String,
         nationality: String,
@@ -34,4 +35,7 @@ const NotasSchema: Schema = new Schema({
     option: String,
     object: String,
     extras: String,
+    */
 });
+
+export default model<INOtas>('Notas', NotasSchema);

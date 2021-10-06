@@ -1,6 +1,5 @@
 import Express, { json, urlencoded } from 'express';
 import notasRouter from './routes/notasRouter';
-import loginRouter from './routes/loginRouter';
 
 //inicialización
 const app = Express();
@@ -13,7 +12,7 @@ app.use(json());
 app.use(urlencoded({extended:false}));
 
 //rutas
-app.use('/api/notas',notasRouter);
-app.use('/api/login', loginRouter);
+app.use('/api',notasRouter);
+
 
 export default app;

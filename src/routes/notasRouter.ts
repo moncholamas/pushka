@@ -3,10 +3,10 @@ import {deleteNota, getNotaById, getNotas, nuevaNota, updateNota} from '../contr
 
 const router = Router();
 
-router.get('/',getNotas);
-router.get('/:id',getNotaById);
-router.post('/', nuevaNota);
-router.put('/:id',updateNota);
-router.delete('/:id', deleteNota);
+router.get('/notas',getNotas);
+router.get('/notas/:id',getNotaById);
+router.post('/notas', nuevaNota);
+router.put('/notas/:id',updateNota);
+router.delete('/notas/:id', deleteNota);
 
 export default router;
