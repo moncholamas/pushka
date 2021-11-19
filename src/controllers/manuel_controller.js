@@ -1,5 +1,5 @@
 function hola(){
-    return "hola soy una funcion";
+    return "manuel";
 }
 
 hola();
