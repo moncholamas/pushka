@@ -1,5 +1,5 @@
 function hola(){
-    return "soy una modificacion";
+    return "soy una modificacion nueva";
 }
 
 hola();
